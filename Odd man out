@@ -1,0 +1,18 @@
+def odd_out(lst):
+  output=set()
+  i=0
+  while i < len(lst) :
+    if lst[i] in output :
+      output.remove(lst[i])
+    else :
+      output.add(lst[i])
+    i+=1
+  return(output)	
+
+cases=input() 
+
+for t in range(int(cases)):
+  guests_number=input()
+  guests_codes = [int(j) for j in input().split()] 
+  odds= ', '.join(str(k) for k in odd_out(guests_codes))
+  print(  "Case #%s: %s" % (t+1,odds))
